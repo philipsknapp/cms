@@ -1,0 +1,17 @@
+<% unless session[:user] %>
+  <a href="/users/signin">Sign In</a>
+<% end %>
+<ul>
+  <% @contents.each do |filename| %>
+    <li> 
+      <a href="/<%= filename %>"><%= filename %></a>
+      <a href="/<%= filename %>/edit" style="padding-left:15px; padding-right:15px;">edit</a>
+      <form action="/<%= filename %>/delete" method="post" style="display: inline;">
+        <button>delete</button>
+      </form>
+    </li>
+  <% end %>
+</ul>
+<p>
+  <a href="/new">New Document</a>
+</p>

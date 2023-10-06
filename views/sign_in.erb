@@ -1,0 +1,13 @@
+<form action="/users/signin" method="POST">
+  <div class="username">
+    <label for="username">Username:</label>
+    <input id="username" type="text" name="username" value="<%= session.delete(:invalid_username) %>">
+  </div>
+  <div class="password">
+    <label for="password">Password:</label>
+    <input id="password" type="text" name="password">
+  </div>
+  <div class="submit">
+    <input type="submit" value="Sign In">
+  </div>
+</form>
